@@ -4,6 +4,11 @@ title = "CyberSoul 2026"
 theme = "PaperMod"  # o el nombre exacto de tu tema
 
 [params]
+
+  assets.disableHLJS = true 
+[markup]
+  [markup.highlight]
+    noClasses = false 
   author = "CIBERSEGURDAD"
   description = "Consejos prácticos de ciberseguridad"
 
