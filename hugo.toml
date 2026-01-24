@@ -4,6 +4,8 @@ title = 'CyberSoul - El Futuro Digital'
 theme = 'PaperMod'
 
 [params]
+
+  googleAnalytics = "G-PH1TP4SQSM"
   description = "Explorando IA, Ciberseguridad y Tecnologías del Futuro"
   author = "CyberSoul Team"
   ShowReadingTime = true
