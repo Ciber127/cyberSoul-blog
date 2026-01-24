@@ -1,25 +1,46 @@
-baseURL = "https://Ciber127.github.io/cyberSoul-blog/"
-languageCode = "es-co"
-title = "CyberSoul 2026"
-theme = "PaperMod"  # o el nombre exacto de tu tema
+baseURL = 'https://ciber127.github.io/cyberSoul-blog/'
+languageCode = 'es'
+title = 'CyberSoul - El Futuro Digital'
+theme = 'PaperMod'
 
 [params]
+  description = "Explorando IA, Ciberseguridad y Tecnologías del Futuro"
+  author = "CyberSoul Team"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
 
-  assets.disableHLJS = true 
-[markup]
-  [markup.highlight]
-    noClasses = false 
-  author = "CIBERSEGURDAD"
-  description = "Consejos prácticos de ciberseguridad"
+[params.homeInfoParams]
+  Title = "Bienvenido a CyberSoul 🚀"
+  Content = "Explorando el futuro digital a través de IA, ciberseguridad y tecnologías emergentes"
+
+[[params.socialIcons]]
+  name = "twitter"
+  url = "https://twitter.com/cybersoul"
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/Ciber127"
 
 [menu]
   [[menu.main]]
-    identifier = "inicio"
     name = "Inicio"
     url = "/"
     weight = 1
+  
   [[menu.main]]
-    identifier = "blog"
-    name = "Blog"
+    name = "Posts"
     url = "/posts/"
     weight = 2
+  
+  [[menu.main]]
+    name = "Categorías"
+    url = "/categories/"
+    weight = 3
+  
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 4
