@@ -1,9 +1,10 @@
-name: Deploy Hugo site to Pages
+name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:  # Permite deploy manual si quieres probar
 
 permissions:
   contents: read
@@ -14,40 +15,33 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.128.0
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb          
-      
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
 
+      - name: Setup Hugo
+        run: |
+          HUGO_VERSION=0.134.0  # Cambia a la última versión estable de https://github.com/gohugoio/hugo/releases
+          wget -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
+          tar -xzf hugo.tar.gz hugo
+          sudo mv hugo /usr/local/bin/hugo
+          hugo version
+
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5  # Actualizado a v5 (2026)
 
       - name: Build with Hugo
         env:
-          HUGO_ENVIRONMENT: production
           HUGO_ENV: production
-        run: |
-          hugo \
-            --gc \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"          
+          HUGO_ENVIRONMENT: production
+        run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.origin }}/" --destination public
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -63,5 +57,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
-
+        uses: actions/deploy-pages@v4  # v4 es estable en 2026
