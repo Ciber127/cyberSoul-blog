@@ -1,20 +1,11 @@
-﻿baseURL = "https://https://ciber127.github.io/cyberSoul-blog/"
+baseURL = "https://Ciber127.github.io/cyberSoul-blog/"
 languageCode = "es-co"
-title = "CyberSoul 2026"
-theme = "PaperMod"
+title = "CiberTips 2026"
+theme = "PaperMod"  # o el nombre exacto de tu tema
 
 [params]
   author = "CIBERSEGURDAD"
-  description = "Consejos prácticos de ciberseguridad 2026"
-  ShowReadingTime = true
-  ShowShareButtons = true
-  ShowPostNavLinks = true
-  defaultTheme = "auto"   # auto, light, dark
-
-[params.colors]
-  primary = "#1e40af"
-  accent = "#10b981"
-  alert = "#ef4444"
+  description = "Consejos prácticos de ciberseguridad"
 
 [menu]
   [[menu.main]]
