@@ -1,6 +1,6 @@
 baseURL = "https://Ciber127.github.io/cyberSoul-blog/"
 languageCode = "es-co"
-title = "CiberTips 2026"
+title = "CyberSoul 2026"
 theme = "PaperMod"  # o el nombre exacto de tu tema
 
 [params]
