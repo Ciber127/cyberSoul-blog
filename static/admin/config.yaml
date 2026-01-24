@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: "Crear {{collection}} “{{slug}}”"
+    update: "Actualizar {{collection}} “{{slug}}”"
+    delete: "Eliminar {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Subir “{{path}}”"
+    deleteMedia: "[skip ci] Eliminar “{{path}}”"
+
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string", required: true}
+      - {label: "Fecha", name: "date", widget: "datetime", format: "YYYY-MM-DD", required: true}
+      - {label: "Categoría", name: "categories", widget: "select", options: ["herramientas", "alertas", "vpn", "estafas", "movil"], multiple: true}
+      - {label: "Imagen Destacada", name: "featuredImage", widget: "image", required: false}
+      - {label: "Contenido", name: "body", widget: "markdown", required: true}

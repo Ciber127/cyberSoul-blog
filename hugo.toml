@@ -1,0 +1,29 @@
+﻿baseURL = "https://tu-sitio.netlify.app/"
+languageCode = "es-co"
+title = "CyberSoul 2026"
+theme = "PaperMod"
+
+[params]
+  author = "CIBERSEGURDAD"
+  description = "Consejos prácticos de ciberseguridad 2026"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  defaultTheme = "auto"   # auto, light, dark
+
+[params.colors]
+  primary = "#1e40af"
+  accent = "#10b981"
+  alert = "#ef4444"
+
+[menu]
+  [[menu.main]]
+    identifier = "inicio"
+    name = "Inicio"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/posts/"
+    weight = 2
