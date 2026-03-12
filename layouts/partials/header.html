@@ -1,0 +1,23 @@
+<header class="header">
+  <a href="{{ .Site.BaseURL }}" class="logo-container">
+    <div class="logo-icon">CS</div>
+    <div class="logo-text">CyberSoul</div>
+  </a>
+
+  <nav class="nav">
+    <a href="{{ .Site.BaseURL }}" 
+       class="{{ if .IsHome }}active{{ end }}">Inicio</a>
+
+    <a href="{{ "/categories/ia-futuro/" | relLangURL }}" 
+       class="{{ if eq .RelPermalink ("/categories/ia-futuro/" | relLangURL) }}active{{ end }}">IA & Futuro</a>
+
+    <a href="{{ "/categories/ciberseguridad/" | relLangURL }}" 
+       class="{{ if eq .RelPermalink ("/categories/ciberseguridad/" | relLangURL) }}active{{ end }}">Ciberseguridad</a>
+
+    <a href="{{ "/sobre/" | relLangURL }}" 
+       class="{{ if eq .RelPermalink ("/sobre/" | relLangURL) }}active{{ end }}">Sobre Nosotros</a>
+
+    <a href="{{ "/contacto/" | relLangURL }}" 
+       class="{{ if eq .RelPermalink ("/contacto/" | relLangURL) }}active{{ end }}">Contacto</a>
+  </nav>
+</header>

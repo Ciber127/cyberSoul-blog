@@ -1,0 +1,112 @@
+{{ define "main" }}
+  <!-- Tu header -->
+  <header class="header">
+    <a href="{{ .Site.BaseURL }}" class="logo-container">
+      <div class="logo-icon">CS</div>
+      <div class="logo-text">CyberSoul</div>
+    </a>
+    <nav class="nav">
+      <a href="{{ .Site.BaseURL }}" class="active">Inicio</a>
+      <a href="/categories/ia-futuro/">IA & Futuro</a>
+      <a href="/categories/ciberseguridad/">Ciberseguridad</a>
+      <a href="/sobre/">Sobre Nosotros</a>
+      <a href="/contacto/">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Tu hero -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1>El Futuro Digital<br/>Comienza Aquí</h1>
+      <p>Explorando IA, Ciberseguridad y las Tecnologías que Definirán el Próximo Siglo</p>
+      <a href="#articulos" class="btn-primary">Explorar Artículos</a>
+    </div>
+  </section>
+
+  <!-- Últimos artículos (dinámico - últimos 6 posts) -->
+  <section class="section" id="articulos">
+    <h2 class="section-title">Últimos Artículos</h2>
+    <div class="articles-grid">
+      {{ range first 6 (where .Site.RegularPages "Type" "posts").ByDate.Reverse }}
+        <a href="{{ .Permalink }}" class="article-card">
+          {{ if .Params.featuredImage }}
+            <img src="{{ .Params.featuredImage | relURL }}" alt="{{ .Title }}" class="article-img">
+          {{ else }}
+            <div class="article-img article-img-1">AI</div>  <!-- Placeholder -->
+          {{ end }}
+          <div class="article-content">
+            <span class="badge badge-cyan">{{ index .Params.categories 0 | title }}</span>  <!-- Primera categoría -->
+            <h3 class="article-title">{{ .Title }}</h3>
+            <p class="article-excerpt">{{ .Summary | truncate 150 }}</p>
+            <div class="article-footer">
+              <span class="article-date">{{ .Date.Format "2 Ene 2006" }}</span>
+              <span class="article-link">Leer más →</span>
+            </div>
+          </div>
+        </a>
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- Categorías (dinámico - lista categorías existentes) -->
+  <section class="section categories-section" id="categorias">
+    <h2 class="section-title">Explora por Categoría</h2>
+    <div class="categories-grid">
+      {{ range $taxonomy := .Site.Taxonomies.categories }}
+        <a href="{{ $taxonomy.Page.Permalink }}" class="category-card category-cyan">
+          <div class="category-icon">{{ $taxonomy.Page.Title | upper | slice 0 2 }}</div>  <!-- Icono placeholder -->
+          <h4 class="category-title">{{ $taxonomy.Page.Title }}</h4>
+          <p class="category-desc">{{ $taxonomy.Page.Description | default "Explora artículos sobre esta categoría" }}</p>
+        </a>
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter" id="contacto">
+    <h3>Recibe el Futuro en tu Inbox</h3>
+    <p>Suscríbete para recibir análisis exclusivos sobre tecnología, IA y ciberseguridad cada semana</p>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="tu@email.com" id="email-input">
+      <button class="newsletter-btn" onclick="alert('¡Gracias por suscribirte! Implementa un servicio como Mailchimp o ConvertKit para capturar emails reales.')">Suscribirme</button>
+    </div>
+    <p class="newsletter-note">Sin spam. Cancela cuando quieras.</p>
+  </section>
+
+  <!-- Tu footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4 class="footer-title">CyberSoul</h4>
+        <p class="footer-text">Explorando el futuro digital a través de IA, ciberseguridad y tecnologías emergentes.</p>
+      </div>
+      <div>
+        <h5 class="footer-heading">Enlaces Rápidos</h5>
+        <div class="footer-links">
+          <a href="{{ .Site.BaseURL }}" class="footer-link">Inicio</a>
+          <a href="/sobre/" class="footer-link">Sobre Nosotros</a>
+          <a href="/contacto/" class="footer-link">Contacto</a>
+        </div>
+      </div>
+      <div>
+        <h5 class="footer-heading">Categorías</h5>
+        <div class="footer-links">
+          <a href="/categories/ia-futuro/" class="footer-link">Inteligencia Artificial</a>
+          <a href="/categories/ciberseguridad/" class="footer-link">Ciberseguridad</a>
+        </div>
+      </div>
+      <div>
+        <h5 class="footer-heading">Síguenos</h5>
+        <div class="footer-social">
+          <a href="https://x.com/" target="_blank" class="social-link">X</a>
+          <a href="https://linkedin.com" target="_blank" class="social-link">LinkedIn</a>
+          <a href="https://facebook.com" target="_blank" class="social-link">Facebook</a>
+          <a href="https://youtube.com" target="_blank" class="social-link">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CyberSoul. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+{{ end }}

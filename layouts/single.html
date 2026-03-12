@@ -1,0 +1,15 @@
+{{ define "main" }}
+  {{ partial "header.html" . }}
+  <article class="section">
+    <h1 class="section-title">{{ .Title }}</h1>
+    <div class="article-content">
+      {{ if .Params.featuredImage }}
+        <img src="{{ .Params.featuredImage | relURL }}" alt="{{ .Title }}" class="w-full mb-8">
+      {{ end }}
+      <p class="article-date">{{ .Date.Format "2 Ene 2006" }}</p>
+      {{ .Content }}  <!-- El contenido completo del post -->
+    </div>
+  </article>
+  {{ partial "sidebar.html" . }}
+  {{ partial "footer.html" . }}
+{{ end }}

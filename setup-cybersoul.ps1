@@ -540,7 +540,6 @@ git commit -m "Nuevo post: Título"
 git push
 \`\`\`
 
-El sitio se actualiza automáticamente en 2-3 minutos.
 
 ## 📄 Copyright
 
@@ -566,26 +565,3 @@ Write-Host "`n📤 Preparando archivos para Git..." -ForegroundColor Yellow
 
 git add .
 
-Write-Host "`n✅ CONFIGURACIÓN COMPLETADA" -ForegroundColor Green
-Write-Host "`nArchivos creados:" -ForegroundColor Cyan
-Write-Host "  ✓ LICENSE" -ForegroundColor White
-Write-Host "  ✓ COPYRIGHT.md" -ForegroundColor White
-Write-Host "  ✓ hugo.toml (actualizado)" -ForegroundColor White
-Write-Host "  ✓ .github/workflows/hugo.yml" -ForegroundColor White
-Write-Host "  ✓ content/sobre.md" -ForegroundColor White
-Write-Host "  ✓ content/posts/ia-generativa-2026.md" -ForegroundColor White
-Write-Host "  ✓ .gitignore" -ForegroundColor White
-Write-Host "  ✓ README.md" -ForegroundColor White
-
-Write-Host "`n📋 PRÓXIMOS PASOS:" -ForegroundColor Yellow
-Write-Host "1. Revisar los archivos creados" -ForegroundColor White
-Write-Host "2. Ejecutar: git commit -m 'Setup: Configuración completa de CyberSoul'" -ForegroundColor Cyan
-Write-Host "3. Ejecutar: git push" -ForegroundColor Cyan
-Write-Host "4. Ir a GitHub → Settings → Pages → Source: GitHub Actions" -ForegroundColor White
-Write-Host "5. Hacer repo PÚBLICO: Settings → Danger Zone → Change visibility" -ForegroundColor White
-Write-Host "`n🌐 Tu sitio estará en: https://ciber127.github.io/cyberSoul-blog/" -ForegroundColor Green
-Write-Host "`n💰 Para monetizar:" -ForegroundColor Yellow
-Write-Host "  - Agrega Google Analytics ID en hugo.toml" -ForegroundColor White
-Write-Host "  - Aplica a Google AdSense cuando tengas 500+ visitas/día" -ForegroundColor White
-Write-Host "  - Agrega links de afiliados en tus posts" -ForegroundColor White
-Write-Host "`n🎉 ¡Todo listo! ¡Comienza a escribir contenido de calidad!" -ForegroundColor Green
