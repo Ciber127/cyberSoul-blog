@@ -4,118 +4,27 @@ title = 'CyberSoul - El Futuro Digital'
 theme = 'PaperMod'
 
 [params]
-  description = "Explorando IA, Ciberseguridad y las Tecnologías que Definirán el Próximo Siglo"
-  author = "CyberSoul Team"
-  keywords = ["IA", "Inteligencia Artificial", "Ciberseguridad", "Tecnología", "Futuro Digital"]
-  
-  # Copyright
-  copyright = "© 2026 CyberSoul. Todos los derechos reservados. El contenido no puede ser reproducido sin autorización."
-  
-  # Características
+  author = "CIBERSEGURDAD"
+  description = "Consejos prÃ¡cticos de ciberseguridad 2026"
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowRssButtonInSectionTermList = true
-  ShowToc = true
-  TocOpen = false
-  
-  # Analytics (Agregar tu ID cuando tengas)
-  # googleAnalytics = "G-XXXXXXXXXX"
+  defaultTheme = "auto"   # auto, light, dark
 
-  # Imágenes
-  images = ["/images/cybersoul-og.jpg"]
+[params.colors]
+  primary = "#1e40af"
+  accent = "#10b981"
+  alert = "#ef4444"
 
-[params.homeInfoParams]
-  Title = "Bienvenido a CyberSoul ??"
-  Content = """
-  Explorando el futuro digital a través de **IA**, **Ciberseguridad** y **Tecnologías Emergentes**.
-  
-  ?? Análisis profundos | ?? Información verificada | ?? Contenido de vanguardia
-  """
-
-[[params.socialIcons]]
-  name = "github"
-  url = "https://github.com/Ciber127"
-
-[[params.socialIcons]]
-  name = "twitter"
-  url = "https://twitter.com/cybersoul"
-
-[[params.socialIcons]]
-  name = "rss"
-  url = "/index.xml"
-
-[params.assets]
-  favicon = "/favicon.ico"
-  favicon16x16 = "/favicon-16x16.png"
-  favicon32x32 = "/favicon-32x32.png"
-
-[params.cover]
-  linkFullImages = true
-
-# Menu
 [menu]
   [[menu.main]]
     identifier = "inicio"
-    name = "?? Inicio"
+    name = "Inicio"
     url = "/"
     weight = 1
   
   [[menu.main]]
-    identifier = "posts"
-    name = "?? Artículos"
+    identifier = "blog"
+    name = "Blog"
     url = "/posts/"
     weight = 2
-  
-  [[menu.main]]
-    identifier = "ia"
-    name = "?? IA"
-    url = "/categories/ia/"
-    weight = 3
-  
-  [[menu.main]]
-    identifier = "ciberseguridad"
-    name = "?? Ciberseguridad"
-    url = "/categories/ciberseguridad/"
-    weight = 4
-  
-  [[menu.main]]
-    identifier = "tags"
-    name = "??? Tags"
-    url = "/tags/"
-    weight = 5
-  
-  [[menu.main]]
-    identifier = "sobre"
-    name = "?? Sobre"
-    url = "/sobre/"
-    weight = 6
-
-# Taxonomías
-[taxonomies]
-  category = "categories"
-  tag = "tags"
-
-# Markup
-[markup]
-  [markup.highlight]
-    style = "monokai"
-    lineNos = true
-  
-  [markup.goldmark.renderer]
-    unsafe = true
-
-# Outputs
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-
-# Privacy
-[privacy]
-  [privacy.googleAnalytics]
-    anonymizeIP = true
-    respectDoNotTrack = true
-  
-  [privacy.twitter]
-    enableDNT = true
